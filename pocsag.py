@@ -177,8 +177,8 @@ def encodeASCII(initial_offset, text, buff):
 # Char Translationtable
 mirrorTab = [0x00, 0x08, 0x04, 0x0c, 0x02, 0x0a, 0x06, 0x0e, 0x01, 0x09]
 def encodeDigit(ch):
-    if ch >= '0' and ch <= '9':
-        return mirrorTab[ch - '0']
+    if ord(ch) >= ord('0') and ord(ch) <= ord('9'):
+        return mirrorTab[ord(ch) - ord('0')]
     elif ch == ' ':
         return 0x03
     elif ch == 'u' or ch == 'U':
